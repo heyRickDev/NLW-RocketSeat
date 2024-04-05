@@ -15,6 +15,16 @@
     <title>Document</title>
   </head>
   <body>
+    <form onsubmit="adicionarParticipante(event)">
+      <fieldset>
+        <legend>Inscrição</legend>
+        <div>
+          <input type="text" placeholder="Nome Completo" name="nome" required />
+          <input type="email" placeholder="Email" name="email" required />
+          <button>Realizar Inscrição</button>
+        </div>
+      </fieldset>
+    </form>
     <table width="100%">
       <thead style="text-align: left">
         <tr>
