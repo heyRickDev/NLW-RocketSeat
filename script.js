@@ -115,6 +115,43 @@ const adicionarParticipante = (event) => {
     dataInscricao: new Date(),
     dataCheckIn: null,
   }
+
+  // verificar se o participante já existe
+  const participanteExiste = participantes.find((p) => {
+    return p.email == participante.email
+  })
+
+  // Abaixo temos uma versão curta e de se declarar o mesmo:
+
+  // const participanteExiste = participantes.find((p) => p.email == participante.email
+  // )
+
+  if (participanteExiste) {
+    alert("Email já existe!")
+    event.target.querySelector("[name=nome]").value = ""
+    event.target.querySelector("[name=email]").value = ""
+    return
+  }
   participantes = [participante, ...participantes]
+  atualizarLista(participantes)
+  //limpar os campos do formulário
+  event.target.querySelector("[name=nome]").value = ""
+  event.target.querySelector("[name=email]").value = ""
+}
+const fazerCheckIn = (event) => {
+  // confirmar se realmente quer o check-in
+  const mensagemConfirmacao = "Tem certeza que deseja fazer o check-in?"
+
+  if (confirm(mensagemConfirmacao) == false) {
+    return
+  }
+
+  // encontrar o participante dentro da lista
+  const participante = participantes.find((p) => {
+    return p.email == event.target.dataset.email
+  })
+  // atualizar o checkin do participante
+  participante.dataCheckIn = new Date()
+  // atualizar a lista de participantes
   atualizarLista(participantes)
 }
