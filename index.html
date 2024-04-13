@@ -22,26 +22,114 @@
     <title>Document</title>
   </head>
   <body>
-    <form onsubmit="adicionarParticipante(event)">
-      <fieldset>
-        <legend>Inscrição</legend>
-        <div>
-          <input type="text" placeholder="Nome Completo" name="nome" required />
-          <input type="email" placeholder="Email" name="email" required />
+    <div class="container">
+      <header>
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="32" height="32" rx="7.11111" fill="#F48F56" />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12.0682 15.0585V12.7587L5.71097 15.1201H5.69678V17.4821H5.71097L12.0682 19.8463V17.5416L8.80823 16.2976L12.0682 15.0585Z"
+            fill="#00292E"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M19.6328 18.0618L22.89 16.8249L19.6328 15.588V13.2882L25.9829 15.6524H25.9998V18.0165H25.9829L19.6328 20.3687V18.0618ZM16.9057 10.031L13.1708 22.0167H15.387L19.1219 10.031H16.9057Z"
+            fill="#00292E"
+          />
+        </svg>
+      </header>
+      <form onsubmit="adicionarParticipante(event)">
+        <fieldset>
+          <legend>Inscrição</legend>
+          <div class="input-wrapper">
+            <svg
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 13.8333C12 12.7724 11.5786 11.755 10.8284 11.0048C10.0783 10.2547 9.06087 9.83325 8 9.83325C6.93913 9.83325 5.92172 10.2547 5.17157 11.0048C4.42143 11.755 4 12.7724 4 13.8333"
+                stroke="#9FF9CC"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.00004 9.83333C9.4728 9.83333 10.6667 8.63943 10.6667 7.16667C10.6667 5.69391 9.4728 4.5 8.00004 4.5C6.52728 4.5 5.33337 5.69391 5.33337 7.16667C5.33337 8.63943 6.52728 9.83333 8.00004 9.83333Z"
+                stroke="#9FF9CC"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.00004 15.1666C11.6819 15.1666 14.6667 12.1818 14.6667 8.49992C14.6667 4.81802 11.6819 1.83325 8.00004 1.83325C4.31814 1.83325 1.33337 4.81802 1.33337 8.49992C1.33337 12.1818 4.31814 15.1666 8.00004 15.1666Z"
+                stroke="#9FF9CC"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <input
+              type="text"
+              placeholder="Nome Completo"
+              name="nome"
+              required
+            />
+          </div>
+          <div class="input-wrapper">
+            <svg
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.00004 11.1666C9.4728 11.1666 10.6667 9.97268 10.6667 8.49992C10.6667 7.02716 9.4728 5.83325 8.00004 5.83325C6.52728 5.83325 5.33337 7.02716 5.33337 8.49992C5.33337 9.97268 6.52728 11.1666 8.00004 11.1666Z"
+                stroke="#9FF9CC"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10.6667 5.83326V9.16659C10.6667 9.69702 10.8774 10.2057 11.2525 10.5808C11.6276 10.9559 12.1363 11.1666 12.6667 11.1666C13.1971 11.1666 13.7059 10.9559 14.0809 10.5808C14.456 10.2057 14.6667 9.69702 14.6667 9.16659V8.49992C14.6667 6.99813 14.1596 5.54032 13.2277 4.3627C12.2957 3.18508 10.9934 2.35664 9.53173 2.0116C8.07011 1.66656 6.5348 1.82513 5.17456 2.46163C3.81431 3.09812 2.70882 4.17525 2.0372 5.5185C1.36558 6.86175 1.16717 8.39242 1.47412 9.86251C1.78107 11.3326 2.57539 12.656 3.7284 13.6183C4.88141 14.5805 6.32554 15.1253 7.82683 15.1643C9.32812 15.2034 10.7986 14.7343 12 13.8333"
+                stroke="#9FF9CC"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <input type="email" placeholder="Email" name="email" required />
+          </div>
           <button>Realizar Inscrição</button>
+        </fieldset>
+      </form>
+      <section class="lista-participantes">
+        <h2>Participantes</h2>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Participante</th>
+                <th>Data da Inscrição</th>
+                <th>Data do Check-in</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
-      </fieldset>
-    </form>
-    <table width="100%">
-      <thead style="text-align: left">
-        <tr>
-          <th>Participante</th>
-          <th>Data da Inscrição</th>
-          <th>Data do Check-in</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <script src="./script.js"></script>
+      </section>
+      <script src="./script.js"></script>
+    </div>
   </body>
 </html>

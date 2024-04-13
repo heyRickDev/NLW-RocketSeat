@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+:root {
+  --defaultBorder: 1px solid #ffffff1a;
+}
 body,
 table,
 input,
@@ -15,19 +17,82 @@ body {
   background-color: #121214;
   color: #fff;
 }
+.container {
+  max-width: 690px;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+header {
+  padding: 20px 0;
+}
+form {
+  border: var(--defaultBorder);
+  border-inline: none;
+  padding: 20px 0;
+}
+.input-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  border: var(--defaultBorder);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font: 400 14px/150% "Roboto", sans-serif;
+}
+fieldset {
+  display: flex;
+  gap: 12px;
+  border: none;
+}
+fieldset input {
+  all: unset;
+  color: #c4c4cc;
+}
+fieldset legend,
+section h2 {
+  font: 700 16px/140% "Roboto", sans-serif;
+  color: #e1e1e6;
+  padding-bottom: 16px;
+}
+fieldset button {
+  background-color: #f48f56;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 20px;
+  font: 700 12px/24px "Roboto", sans-serif;
+  color: #00292e;
+  width: fit-content;
+  transition: 300ms ease-in;
+}
+fieldset button:hover {
+  background-color: #f16d21;
+}
+.lista-participantes {
+  padding: 20px 0;
+}
+.lista-participantes > div {
+  border: var(--defaultBorder);
+  border-radius: 10px;
+}
 table {
+  width: 100%;
   border-collapse: collapse;
 }
 table thead {
   font-size: 14px;
   line-height: 16px;
 }
+thead {
+  text-align: left
+}
 thead th,
 tbody td {
+  
   padding: 12px 16px;
 }
 tbody td {
-  border-top: 1px solid #ffffff1a;
+  border-top: var(--defaultBorder);
   font-size: 13px;
   line-height: 15px;
   color: #c4c4cc;
